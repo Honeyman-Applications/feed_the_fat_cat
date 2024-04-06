@@ -2,6 +2,7 @@ import 'package:feed_the_fat_cat/src/cheeseburger_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:universal_platform/universal_platform.dart';
 
 /// Bradley Honeyman
 /// April 5, 2024
@@ -56,20 +57,22 @@ class CatState extends State<Cat> {
       context: context,
     );
 
+    String prefix = UniversalPlatform.isAndroid ? "assets/" : "";
+
     return Center(
       child: widget.cheeseburgerCount > 0
           ? SizedBox(
               width: size,
               height: size,
               child: Image.asset(
-                "cats/cat1.png",
+                "${prefix}cats/cat1.png",
               ),
             )
           : SizedBox(
               width: size,
               height: size,
               child: Image.asset(
-                "cats/dead.png",
+                "${prefix}cats/dead.png",
               ),
             ),
     );

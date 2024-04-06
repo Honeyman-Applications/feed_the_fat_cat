@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:universal_platform/universal_platform.dart';
 
 /// Bradley Honeyman
 /// April 5, 2024
@@ -44,12 +45,14 @@ class CheeseburgerState extends State<Cheeseburger> {
       context: context,
     );
 
+    String prefix = UniversalPlatform.isAndroid ? "assets/" : "";
+
     return Center(
       child: SizedBox(
         width: size,
         height: size,
         child: Image.asset(
-          "cats/cheeseburger.png",
+          "${prefix}cats/cheeseburger.png",
         ),
       ),
     );
